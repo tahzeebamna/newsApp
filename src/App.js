@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react';
-import {Paper,TableContainer,Table,TableBody,TableHead,TableCell,TableRow} from "@material-ui/core"
+import React from 'react';
+import './App.css';
 import Newsarticle from './Newsarticle';
 
 

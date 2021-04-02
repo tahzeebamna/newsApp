@@ -15,6 +15,7 @@ function Newsarticle() {
         
         console.log(resp);
         setItem(resp.data.articles)
+
         
         
         
@@ -30,16 +31,20 @@ function Newsarticle() {
     }
     return (
         <Container>
-        
-        <TableContainer component ={Paper}>
-        <Table>
-          <TableHead>
-              
-              <TableRow>
-                  <TableCell>title</TableCell>
-                  <TableCell>description</TableCell>
-                  <TableCell>content</TableCell>
+            
+            <TableContainer component ={Paper}>
+            <Table>
+            <TableHead>
+                
+              <TableRow >
                   <TableCell>Image</TableCell>
+                  <TableCell>Source</TableCell>
+                  <TableCell>Author</TableCell>
+                  <TableCell>Title</TableCell>
+                  <TableCell>Date</TableCell>
+                  <TableCell>Url</TableCell>
+
+
                   
                 </TableRow>
           </TableHead>
@@ -47,10 +52,13 @@ function Newsarticle() {
             {item.slice(page*rowsPerPage, page*rowsPerPage + rowsPerPage).map((articles)=>(
                 
                 <TableRow> 
-                <TableCell> {articles.title}</TableCell>
-                <TableCell>{articles.description}</TableCell>
-                <TableCell>{articles.content}</TableCell>
-                <TableCell  ><image src={articles.urlToImage}></image> </TableCell>
+                <TableCell className="title"> <img className="img" src={articles.urlToImage}></img></TableCell>
+                <TableCell className="description">{articles.source.name}</TableCell>
+                <TableCell className="content">{articles.author}</TableCell>
+                <TableCell  >{articles.title} </TableCell>
+                <TableCell  >{articles.publishedAt} </TableCell>
+                <TableCell  >{articles.url} </TableCell>
+
                 
             </TableRow>
                 
